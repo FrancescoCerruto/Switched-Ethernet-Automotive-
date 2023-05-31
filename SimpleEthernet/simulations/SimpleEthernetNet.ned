@@ -9,11 +9,13 @@ network SimpleEthernetNet
 {
     parameters:
         @display("bgb=1402.7899,803.58496");
-        //porte dello switch
+        //porte dello switch senza polling master
         **.portCount = 10;
+        //settare porte diverse per switch
     submodules:
         SW1: EthernetSwitch {
             @display("p=474.95123,351.85873;is=vl");
+            
         }
         SW2: EthernetSwitch {
             @display("p=805.9075,351.85873;is=vl");
