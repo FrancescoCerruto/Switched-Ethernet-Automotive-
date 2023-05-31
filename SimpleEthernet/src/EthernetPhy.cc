@@ -54,9 +54,11 @@ void EthernetPhy::handleMessage(cMessage *msg) {
     }
 
     //Frame arrivata dalla rete -> la invio al data link
-    if(frame->hasBitError() == false) {
+    //bit error rate
+    if (dblrand() > 1.0 - pow(1.0 - ber, (double)frame->getBitLength())) {
         send(frame, "upperLayerOut");
     } else {
+        EV_INFO << "Frame scartata a causa di errore" << endl;
         delete frame;
     }
 }
