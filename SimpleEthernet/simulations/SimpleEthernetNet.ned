@@ -8,37 +8,71 @@ import simpleethernet.TrafficGen;
 network SimpleEthernetNet
 {
     parameters:
-        @display("bgb=925.275,498.225");
+        @display("bgb=1402.7899,803.58496");
         //porte dello switch
         **.portCount = 3;
     submodules:
         switch0: EthernetSwitch {
-            @display("p=279.225,217.905");
+            @display("p=474.95123,351.85873");
         }
         switch1: EthernetSwitch {
-            @display("p=568.305,217.905");
+            @display("p=805.9075,351.85873");
         }
-        host0: EthernetHost {
-            @display("p=129.21,105.12");
+        LD2: EthernetHost {
+            @display("p=88.255,126.57625");
         }
-        host1: EthernetHost {
-            @display("p=129.21,307.695");
+        US2: EthernetHost {
+            @display("p=88.255,308.8925");
         }
-        host2: EthernetHost {
-            @display("p=739.125,307.695");
+        CM1: EthernetHost {
+            @display("p=88.255,397.1475");
         }
-        host3: EthernetHost {
-            @display("p=739.125,105.12");
+        LD1: EthernetHost {
+            @display("p=88.255,41.805");
+        }
+        US1: EthernetHost {
+            @display("p=88.255,224.12125");
+        }
+        S2: EthernetHost {
+            @display("p=88.255,745.52246");
+        }
+        CU: EthernetHost {
+            @display("p=88.255,579.46375");
+        }
+        S1: EthernetHost {
+            @display("p=88.255,671.2025");
+        }
+        HU: EthernetHost {
+            @display("p=88.255,487.725");
+        }
+        S4: EthernetHost {
+            @display("p=1213.5062,745.52246");
+        }
+        S3: EthernetHost {
+            @display("p=1213.5062,671.2025");
+        }
+        US3: EthernetHost {
+            @display("p=1221.635,224.12125");
+        }
+        ME: EthernetHost {
+            @display("p=1213.5062,579.46375");
+        }
+        RC: EthernetHost {
+            @display("p=1213.5062,397.1475");
+        }
+        TLM: EthernetHost {
+            @display("p=1213.5062,487.725");
+        }
+        RS2: EthernetHost {
+            @display("p=1221.635,126.57625");
+        }
+        RS1: EthernetHost {
+            @display("p=1221.635,41.805");
+        }
+        US4: EthernetHost {
+            @display("p=1221.635,308.8925");
         }
     connections:
         switch0.channelOut[0] --> switch1.channelIn[0];
         switch1.channelOut[0] --> switch0.channelIn[0];
-        switch0.channelOut[1] --> host0.channelIn;
-        host0.channelOut --> switch0.channelIn[1];
-        switch0.channelOut[2] --> host1.channelIn;
-        host1.channelOut --> switch0.channelIn[2];
-        switch1.channelOut[1] --> host2.channelIn;
-        host2.channelOut --> switch1.channelIn[1];
-        host3.channelOut --> switch1.channelIn[2];
-        switch1.channelOut[2] --> host3.channelIn;
 }
