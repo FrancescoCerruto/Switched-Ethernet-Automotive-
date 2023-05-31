@@ -10,13 +10,13 @@ network SimpleEthernetNet
     parameters:
         @display("bgb=1402.7899,803.58496");
         //porte dello switch
-        **.portCount = 3;
+        **.portCount = 10;
     submodules:
-        switch0: EthernetSwitch {
-            @display("p=474.95123,351.85873");
+        SW1: EthernetSwitch {
+            @display("p=474.95123,351.85873;is=vl");
         }
-        switch1: EthernetSwitch {
-            @display("p=805.9075,351.85873");
+        SW2: EthernetSwitch {
+            @display("p=805.9075,351.85873;is=vl");
         }
         LD2: EthernetHost {
             @display("p=88.255,126.57625");
@@ -72,7 +72,69 @@ network SimpleEthernetNet
         US4: EthernetHost {
             @display("p=1221.635,308.8925");
         }
+        PollingMaster: EthernetHost {
+            @display("p=618.9462,39.4825");
+        }
     connections:
-        switch0.channelOut[0] --> switch1.channelIn[0];
-        switch1.channelOut[0] --> switch0.channelIn[0];
+        //link SW1 to SW2 porta 0
+        SW1.channelOut[0] --> SW2.channelIn[0];
+        SW2.channelOut[0] --> SW1.channelIn[0];
+
+        //link SW1 to  LD1 porta 1
+        LD1.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> LD1.channelIn;
+        //link SW1 to  LD2 porta 2
+        LD2.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> LD2.channelIn;
+        //link SW1 to  US1 porta 3
+        US1.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> US1.channelIn;
+        //link SW1 to  US2 porta 4
+        US2.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> US2.channelIn;
+        //link SW1 to  CM1 porta 5
+        CM1.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> CM1.channelIn;
+        //link SW1 to  HU porta 6
+        HU.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> HU.channelIn;
+        //link SW1 to  CU porta 7
+        CU.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> CU.channelIn;
+        //link SW1 to  S1 porta 8
+        S1.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> S1.channelIn;
+        //link SW1 to  S2 porta 9
+        S2.channelOut --> SW1.channelIn[1];
+        SW1.channelOut[2] --> S2.channelIn;
+
+
+        //link SW2 to  RS1 porta 1
+        RS1.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> RS1.channelIn;
+        //link SW2 to  RS2 porta 2
+        RS2.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> RS2.channelIn;
+        //link SW2 to  US3 porta 3
+        US3.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> US3.channelIn;
+        //link SW2 to  US4 porta 4
+        US4.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> US4.channelIn;
+        //link SW2 to  RC porta 5
+        RC.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> RC.channelIn;
+        //link SW2 to  TLM porta 6
+        TLM.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> TLM.channelIn;
+        //link SW2 to  ME porta 7
+        ME.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> ME.channelIn;
+        //link SW2 to  S3 porta 8
+        S3.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> S3.channelIn;
+        //link SW2 to  S4 porta 9
+        S4.channelOut --> SW2.channelIn[1];
+        SW2.channelOut[2] --> S4.channelIn;
+
 }
