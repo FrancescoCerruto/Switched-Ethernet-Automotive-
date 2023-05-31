@@ -11,8 +11,6 @@ network SimpleEthernetNet
         @display("bgb=925.275,498.225");
         //porte dello switch
         **.portCount = 3;
-        //frequenza bit errati
-        double netber = default(0);
     submodules:
         switch0: EthernetSwitch {
             @display("p=279.225,217.905");

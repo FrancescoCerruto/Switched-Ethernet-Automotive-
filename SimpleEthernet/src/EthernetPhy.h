@@ -18,6 +18,8 @@ class EthernetPhy : public cSimpleModule
         TX_IFG_STATE    //inter frame gap
     } tx_state_t;
 
+    double ber;
+
 
     virtual void initialize() override;
     virtual void handleMessage(cMessage *msg) override;

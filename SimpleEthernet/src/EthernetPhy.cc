@@ -9,6 +9,7 @@ void EthernetPhy::initialize()
     txState = TX_IDLE_STATE;
     upperLayerIn = gate("upperLayerIn");
     sigQueueLen = registerSignal("QueueSize");
+    ber = par("netber");
 }
 
 void EthernetPhy::handleMessage(cMessage *msg) {
@@ -55,11 +56,15 @@ void EthernetPhy::handleMessage(cMessage *msg) {
 
     //Frame arrivata dalla rete -> la invio al data link
     //bit error rate
-    if (dblrand() > 1.0 - pow(1.0 - ber, (double)frame->getBitLength())) {
+    if (ber == 0.0) {
         send(frame, "upperLayerOut");
     } else {
-        EV_INFO << "Frame scartata a causa di errore" << endl;
-        delete frame;
+        if (dblrand() >= 1.0 - pow(1.0 - ber, (double)frame->getBitLength())) {
+            send(frame, "upperLayerOut");
+        } else {
+            EV_INFO << "Frame scartata a causa di errore" << endl;
+            delete frame;
+        }
     }
 }
 
