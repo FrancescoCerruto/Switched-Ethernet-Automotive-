@@ -1,0 +1,144 @@
+file 17568044 1685517439                                        
+version 3
+run General-0-20230531-09:17:04-14552
+attr configname General
+attr datetime 20230531-09:17:04
+attr datetimef 20230531-091704
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network SimpleEthernetNet
+attr processid 14552
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network SimpleEthernetNet
+config **.netber 0.00001
+config **.burstSize 1
+config **.datarate 1Gbps
+config **.host0.AppCount 0
+config **.host0.isPollingMaster true
+config **.host0.**.trxTimer 117us
+config **.host1.AppCount 2
+config **.host2.AppCount 2
+config **.host3.AppCount 2
+config **.host1.app[*].destination "\"SimpleEthernetNet.host2.eth\""
+config **.host2.app[*].destination "\"SimpleEthernetNet.host3.eth\""
+config **.host3.app[*].destination "\"SimpleEthernetNet.host1.eth\""
+config **.app[*].payloadLength 300B
+config **.app[*].period 2ms
+config **.app[*].burstSize 1
+config **.host1.app[0].flow "\"APP_H1\""
+config **.host2.app[0].flow "\"APP_H2\""
+config **.host3.app[0].flow "\"APP_H3\""
+config **.host1.pollingLayer[0].flow "\"APP_H1\""
+config **.host2.pollingLayer[0].flow "\"APP_H2\""
+config **.host3.pollingLayer[0].flow "\"APP_H3\""
+config **.host1.app[1].flow "\"APP_H3\""
+config **.host2.app[1].flow "\"APP_H1\""
+config **.host3.app[1].flow "\"APP_H2\""
+config **.host1.pollingLayer[1].flow "\"APP_H3\""
+config **.host2.pollingLayer[1].flow "\"APP_H1\""
+config **.host3.pollingLayer[1].flow "\"APP_H2\""
+config **.host1.app[0].startTime 500ms
+config **.host2.app[0].startTime 500ms
+config **.host3.app[0].startTime 500ms
+config **.controllerAddress "\"SimpleEthernetNet.host0.eth\""
+config **.host0.pollingMaster.flowTable "FlowTableParameters { flows: [ \t{flow: \"APP_H1\", addr: \"SimpleEthernetNet.host1.eth\", burst: 1, period: 0.002, deadline: 0.002},\t{flow: \"APP_H2\", addr: \"SimpleEthernetNet.host2.eth\", burst: 1, period: 0.002, deadline: 0.002},\t{flow: \"APP_H3\", addr: \"SimpleEthernetNet.host3.eth\", burst: 1, period: 0.002, deadline: 0.002},] }"
+config **.switch0.relay.staticEntries "StaticRelayEntries { entries: [ \t\t{addr: \"SimpleEthernetNet.host3.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.host2.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.host1.eth\", port: 2}, \t\t{addr: \"SimpleEthernetNet.host0.eth\", port: 1} ] }"
+config **.switch1.relay.staticEntries "StaticRelayEntries { entries: [ \t\t{addr: \"SimpleEthernetNet.host3.eth\", port: 2}, \t\t{addr: \"SimpleEthernetNet.host1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.host0.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.host2.eth\", port: 1} ] }"
+
+vector 0 SimpleEthernetNet.host0.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 1 SimpleEthernetNet.switch0.port[2] QueueSize:vector ETV
+attr recordingmode vector
+vector 2 SimpleEthernetNet.switch0.port[0] QueueSize:vector ETV
+attr recordingmode vector
+vector 3 SimpleEthernetNet.switch1.port[1] QueueSize:vector ETV
+attr recordingmode vector
+vector 4 SimpleEthernetNet.switch1.port[2] QueueSize:vector ETV
+attr recordingmode vector
+vector 5 SimpleEthernetNet.host1.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 6 SimpleEthernetNet.host2.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 7 SimpleEthernetNet.host3.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 8 SimpleEthernetNet.host1.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 9 SimpleEthernetNet.switch0.port[1] QueueSize:vector ETV
+attr recordingmode vector
+vector 10 SimpleEthernetNet.host0.pollingMaster TrxTime:vector ETV
+attr recordingmode vector
+vector 11 SimpleEthernetNet.host2.app[1] FLR:vector ETV
+attr recordingmode vector
+vector 12 SimpleEthernetNet.host2.app[1] E2eDelay:vector ETV
+attr recordingmode vector
+vector 13 SimpleEthernetNet.host2.app[1] Throughput:vector ETV
+attr recordingmode vector
+vector 14 SimpleEthernetNet.host2.app[1] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 15 SimpleEthernetNet.host2.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 16 SimpleEthernetNet.switch1.port[0] QueueSize:vector ETV
+attr recordingmode vector
+vector 17 SimpleEthernetNet.host3.app[1] FLR:vector ETV
+attr recordingmode vector
+vector 18 SimpleEthernetNet.host3.app[1] E2eDelay:vector ETV
+attr recordingmode vector
+vector 19 SimpleEthernetNet.host3.app[1] Throughput:vector ETV
+attr recordingmode vector
+vector 20 SimpleEthernetNet.host3.app[1] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 21 SimpleEthernetNet.host3.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 22 SimpleEthernetNet.host1.app[1] FLR:vector ETV
+attr recordingmode vector
+vector 23 SimpleEthernetNet.host1.app[1] E2eDelay:vector ETV
+attr recordingmode vector
+vector 24 SimpleEthernetNet.host1.app[1] Throughput:vector ETV
+attr recordingmode vector
+vector 25 SimpleEthernetNet.host1.app[1] BurstE2eDelay:vector ETV
+attr recordingmode vector
+0	5145 739556 6 476463 0.002 5.712 32768 0 1 16384 16384
+2	744701 776907 26 718115 0.002117576 8.442011776 32768 0 1 16384 16384
+0	1521608 759490 476493 959771 5.712006464 11.172025632 32768 0 1 16384 16384
+9	2281098 787826 15220 981817 0.500003808 11.422003808 32768 0 1 16384 16384
+1	3068924 758534 10 1443064 0.002000576 16.634000576 32768 0 1 16384 16384
+0	3827458 815250 959823 1443097 11.172039392 16.634009168 32768 0 1 16384 16384
+3	4642708 790802 31 1443106 0.002118152 16.63401168 32768 0 1 16384 16384
+2	5433510 828904 718165 1443107 8.442025536 16.634011776 32768 0 1 16384 16384
+4	6262414 806940 52 1443167 0.002235152 16.634028144 32768 0 1 16384 16384
+16	7069354 825180 15276 1465144 0.500017616 16.88203408 32768 0 1 16384 16384
+0	7894534 466508 1443151 1718747 16.634022928 19.748025632 18688 0 1 9344 9344
+1	8361042 152586 1443215 1718653 16.634042 19.748000576 6228 0 1 3114 3114
+2	8513628 322402 1443157 1718757 16.634025536 19.74802824 12460 0 1 6230 6230
+3	8836030 158866 1443111 1718710 16.634012352 19.748014384 6230 0 1 3115 3115
+4	8994896 161980 1443172 1718771 16.634028816 19.748030848 6230 0 1 3115 3115
+5	9156876 419006 15196 1718659 0.5 19.748001152 19250 0 1 9625 9625
+6	9575882 409382 15197 1718715 0.5 19.74801496 19250 0 1 9625 9625
+7	9985264 419007 15198 1718776 0.5 19.748031424 19250 0 1 9625 9625
+8	10404271 478912 15215 1718663 0.500001152 19.748001152 19250 0 1 9625 9625
+9	10883183 648864 981878 1718729 11.422020272 19.748020272 24980 0 1 12490 12490
+10	11532047 997460 15226 1718735 0.500006464 19.748022928 28874 6.464e-06 1.6464e-05 0.37913153599988 5.6198616087062e-06
+11	12529507 249082 15261 1718709 0.500014288 19.748014288 9625 0 0 0 0
+12	12778589 335707 15261 1718709 0.500014288 19.748014288 9625 1.4288e-05 1.4288e-05 0.13752200000001 1.9649143360002e-06
+13	13114296 382761 15261 1718709 0.500014288 19.748014288 9625 4799.8628391195 1169737.8613928 10450915296.84 1.1571005835038e+16
+14	13497057 335707 15261 1718709 0.500014288 19.748014288 9625 1.4288e-05 1.4288e-05 0.13752200000001 1.9649143360002e-06
+15	13832764 478914 15271 1718719 0.50001496 19.74801496 19250 0 1 9625 9625
+16	14311678 151846 1465260 1718724 16.884017616 19.748017616 5730 0 1 2865 2865
+17	14463524 249082 15322 1718770 0.500030752 19.748030752 9625 0 0 0 0
+18	14712606 335707 15322 1718770 0.500030752 19.748030752 9625 3.0752e-05 3.0752e-05 0.295988 9.1022229759987e-06
+19	15048313 382785 15322 1718770 0.500030752 19.748030752 9625 4799.704798956 1169736.8861784 10450888571.519 1.1570952957989e+16
+20	15431098 335707 15322 1718770 0.500030752 19.748030752 9625 3.0752e-05 3.0752e-05 0.295988 9.1022229759987e-06
+21	15766805 498164 15332 1718780 0.500031424 19.748031424 19250 0 1 9625 9625
+22	16264969 249056 15365 1718636 0.500044608 19.746044608 9624 0 0 0 0
+23	16514025 335672 15365 1718636 0.500044608 19.746044608 9624 4.4608e-05 4.4608e-05 0.42930739200001 1.9150544142333e-05
+24	16849697 382673 15365 1718636 0.500044608 19.746044608 9624 4799.5718014022 1169733.0001292 10449696343.829 1.1569540175094e+16
+25	17232370 335672 15365 1718636 0.500044608 19.746044608 9624 4.4608e-05 4.4608e-05 0.42930739200001 1.9150544142333e-05
+
