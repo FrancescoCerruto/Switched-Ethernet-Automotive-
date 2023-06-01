@@ -4,7 +4,6 @@ import simpleethernet.EthernetHost;
 import simpleethernet.EthernetSwitch;
 import simpleethernet.TrafficGen;
 
-//Struttura di rete: n host - m switch
 network SimpleEthernetNet
 {
     parameters:
@@ -12,68 +11,68 @@ network SimpleEthernetNet
     submodules:
         SW1: EthernetSwitch {
             @display("p=643.245,407.74;is=vl");
-			portCount = 11;
+            portCount = 11;
         }
         SW2: EthernetSwitch {
             @display("p=1065.045,407.74;is=vl");
             portCount = 10;
         }
         LD2: EthernetHost {
-            @display("p=73.815,170.4775");
+            @display("p=217.93,84.36");
         }
         US2: EthernetHost {
-            @display("p=73.815,351.5");
+            @display("p=73.815,407.74");
         }
         CM1: EthernetHost {
-            @display("p=73.815,439.375");
+            @display("p=73.815,578.21747");
         }
         LD1: EthernetHost {
-            @display("p=73.815,84.36");
+            @display("p=397.195,84.36");
         }
         US1: EthernetHost {
-            @display("p=73.815,267.13998");
+            @display("p=73.815,214.415");
         }
         S2: EthernetHost {
-            @display("p=73.815,789.1175");
+            @display("p=643.245,833.055");
         }
         CU: EthernetHost {
-            @display("p=73.815,622.15497");
+            @display("p=217.93,833.055");
         }
         S1: EthernetHost {
-            @display("p=73.815,713.545");
+            @display("p=397.195,833.055");
         }
         HU: EthernetHost {
-            @display("p=73.815,530.765");
+            @display("p=93.1475,757.4825");
         }
         S4: EthernetHost {
-            @display("p=1569.4475,789.1175");
+            @display("p=1065.045,833.055");
         }
         S3: EthernetHost {
-            @display("p=1569.4475,713.545");
+            @display("p=1302.3075,833.055");
         }
         US3: EthernetHost {
-            @display("p=1578.235,267.13998");
+            @display("p=1500.905,214.415");
         }
         ME: EthernetHost {
-            @display("p=1569.4475,622.15497");
+            @display("p=1500.905,833.055");
         }
         RC: EthernetHost {
-            @display("p=1569.4475,439.375");
+            @display("p=1609.87,560.6425");
         }
         TLM: EthernetHost {
-            @display("p=1569.4475,530.765");
+            @display("p=1609.87,757.4825");
         }
         RS2: EthernetHost {
-            @display("p=1578.235,170.4775");
+            @display("p=1302.3075,100.1775");
         }
         RS1: EthernetHost {
-            @display("p=1578.235,84.36");
+            @display("p=1065.045,100.1775");
         }
         US4: EthernetHost {
             @display("p=1578.235,351.5");
         }
         PollingMaster: EthernetHost {
-            @display("p=618.9462,39.4825");
+            @display("p=643.245,128.2975");
         }
     connections:
         //link SW1 to SW2 porta 0
@@ -137,7 +136,7 @@ network SimpleEthernetNet
         S4.channelOut --> SW2.channelIn[9];
         SW2.channelOut[9] --> S4.channelIn;
 
-		//link SW1 to PollingMaster porta 10
-		PollingMaster.channelOut --> SW1.channelIn[10];
+        //link SW1 to PollingMaster porta 10
+        PollingMaster.channelOut --> SW1.channelIn[10];
         SW1.channelOut[10] --> PollingMaster.channelIn;
 }
