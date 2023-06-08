@@ -21,8 +21,12 @@ void RelayUnit::handleMessage(cMessage *msg) {
     //recupero porta dello switch
     int idx = msg->getArrivalGate()->getIndex();
 
+    EV_INFO << "Sono il modulo " << getParentModule()->getFullPath() << " e mi e arrivata una frame." << endl;
+
     //recupero frame
     EthernetFrame *frame = check_and_cast<EthernetFrame *>(msg);
+
+    EV_INFO << "Inviata da " << frame->getSrc() << " e diretta a " << frame->getDst() << endl;
 
     //aggiorno porta di ingresso switch
     updateTableEntry(idx, frame->getSrc());

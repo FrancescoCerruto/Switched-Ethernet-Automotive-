@@ -30,6 +30,8 @@ class PollingMaster : public cSimpleModule
     simtime_t txTime;
 
     simsignal_t sigTrxTime;
+
+    int num_frame;
 };
 
 #endif

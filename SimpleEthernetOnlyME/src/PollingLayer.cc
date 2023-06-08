@@ -31,6 +31,7 @@ void PollingLayer::handleMessage(cMessage *msg) {
 
         appTxQueue.insert(pdata);
         emit(sigQueueLen, appTxQueue.getLength());
+
         return;
     }
 
@@ -64,6 +65,9 @@ void PollingLayer::handleMessage(cMessage *msg) {
             }
 
             emit(sigQueueLen, appTxQueue.getLength());
+
+            EV_INFO << "Invio frame da polling layer per il flusso " <<  req->getFlow() << endl;
+
             send(pkt, "lowerLayerOut");
         }
 

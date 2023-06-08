@@ -90,6 +90,9 @@ void TrafficGen::generate() {
         ci->setDestination(par("destination").stringValue());
 
         pkt->setControlInfo(ci);
+
+        EV_INFO << "Preparo pkt applicativo " << pkt->getName() << endl;
+
         send(pkt, "lowerLayerOut");
     }
 }
