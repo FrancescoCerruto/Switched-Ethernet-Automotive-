@@ -92,6 +92,7 @@ void PollingMaster::handleMessage(cMessage *msg) {
         DataControlInfo *ci = new DataControlInfo();
         ci->setDestination(pd->getDestination());
         to_send->setControlInfo(ci);
+
         //check burst size
         if(pd->getLast()) {
             ongoingTransaction = false;
