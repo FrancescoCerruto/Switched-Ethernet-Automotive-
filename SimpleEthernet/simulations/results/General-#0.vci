@@ -1,0 +1,398 @@
+file 28908 1686561108                                           
+version 3
+run General-0-20230612-11:08:12-13628
+attr configname General
+attr datetime 20230612-11:08:12
+attr datetimef 20230612-110812
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network SimpleEthernetNet
+attr processid 13628
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config network SimpleEthernetNet
+config **.datarate 10Gbps
+config **.PollingMaster.AppCount 0
+config **.PollingMaster.isPollingMaster true
+config **.controllerAddress "\"SimpleEthernetNet.PollingMaster.eth\""
+config **.PollingMaster.**.trxTimer 120us
+config **.schedPolicy "\"DM\""
+config **.CU.AppCount 8
+config **.S1.AppCount 1
+config **.S2.AppCount 1
+config **.S3.AppCount 1
+config **.S4.AppCount 1
+config **.HU.AppCount 4
+config **.RS1.AppCount 1
+config **.RS2.AppCount 1
+config **.LD1.AppCount 1
+config **.LD2.AppCount 1
+config **.ME.AppCount 6
+config **.US1.AppCount 1
+config **.US2.AppCount 1
+config **.US3.AppCount 1
+config **.US4.AppCount 1
+config **.CM1.AppCount 1
+config **.TLM.AppCount 2
+config **.RC.AppCount 1
+config **.CU.app[0].startTime 0ms
+config **.LD1.app[*].startTime 0ms
+config **.LD2.app[*].startTime 0ms
+config **.ME.app[*].startTime 0ms
+config **.US1.app[*].startTime 0ms
+config **.US2.app[*].startTime 0ms
+config **.US3.app[*].startTime 0ms
+config **.US4.app[*].startTime 0ms
+config **.CM1.app[*].startTime 0ms
+config **.TLM.app[*].startTime 0ms
+config **.RC.[*].startTime 0ms
+config **.CU.app[0].destination "\"SimpleEthernetNet.HU.eth\""
+config **.LD1.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.LD2.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.ME.app[0].destination "\"SimpleEthernetNet.S1.eth\""
+config **.ME.app[1].destination "\"SimpleEthernetNet.S2.eth\""
+config **.ME.app[2].destination "\"SimpleEthernetNet.S3.eth\""
+config **.ME.app[3].destination "\"SimpleEthernetNet.S4.eth\""
+config **.ME.app[4].destination "\"SimpleEthernetNet.RS1.eth\""
+config **.ME.app[5].destination "\"SimpleEthernetNet.RS2.eth\""
+config **.US1.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.US2.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.US3.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.US4.app[*].destination "\"SimpleEthernetNet.CU.eth\""
+config **.CM1.app[*].destination "\"SimpleEthernetNet.HU.eth\""
+config **.TLM.app[0].destination "\"SimpleEthernetNet.HU.eth\""
+config **.TLM.app[1].destination "\"SimpleEthernetNet.CU.eth\""
+config **.RC.app[0].destination "\"SimpleEthernetNet.HU.eth\""
+config **.destination "\"\""
+config **.CU.app[0].flow "\"ID_4_FROM_CU_TO_HU\""
+config **.LD1.app[*].flow "\"ID_1_FROM_LD1_TO_CU\""
+config **.LD2.app[*].flow "\"ID_1_FROM_LD2_TO_CU\""
+config **.ME.app[0].flow "\"ID_2_FROM_ME_TO_S1\""
+config **.ME.app[1].flow "\"ID_2_FROM_ME_TO_S2\""
+config **.ME.app[2].flow "\"ID_2_FROM_ME_TO_S3\""
+config **.ME.app[3].flow "\"ID_2_FROM_ME_TO_S4\""
+config **.ME.app[4].flow "\"ID_6_FROM_ME_TO_RS1\""
+config **.ME.app[5].flow "\"ID_6_FROM_ME_TO_RS2\""
+config **.US1.app[*].flow "\"ID_3_FROM_US1_TO_CU\""
+config **.US2.app[*].flow "\"ID_3_FROM_US2_TO_CU\""
+config **.US3.app[*].flow "\"ID_3_FROM_US3_TO_CU\""
+config **.US4.app[*].flow "\"ID_3_FROM_US4_TO_CU\""
+config **.CM1.app[*].flow "\"ID_5_FROM_CM1_TO_HU\""
+config **.TLM.app[0].flow "\"ID_7_FROM_TLM_TO_HU\""
+config **.TLM.app[1].flow "\"ID_7_FROM_TLM_TO_CU\""
+config **.RC.app[*].flow "\"ID_8_FROM_RC_TO_HU\""
+config **.CU.pollingLayer[0].flow "\"ID_4_FROM_CU_TO_HU\""
+config **.LD1.pollingLayer[*].flow "\"ID_1_FROM_LD1_TO_CU\""
+config **.LD2.pollingLayer[*].flow "\"ID_1_FROM_LD2_TO_CU\""
+config **.ME.pollingLayer[0].flow "\"ID_2_FROM_ME_TO_S1\""
+config **.ME.pollingLayer[1].flow "\"ID_2_FROM_ME_TO_S2\""
+config **.ME.pollingLayer[2].flow "\"ID_2_FROM_ME_TO_S3\""
+config **.ME.pollingLayer[3].flow "\"ID_2_FROM_ME_TO_S4\""
+config **.ME.pollingLayer[4].flow "\"ID_6_FROM_ME_TO_RS1\""
+config **.ME.pollingLayer[5].flow "\"ID_6_FROM_ME_TO_RS2\""
+config **.US1.pollingLayer[*].flow "\"ID_3_FROM_US1_TO_CU\""
+config **.US2.pollingLayer[*].flow "\"ID_3_FROM_US2_TO_CU\""
+config **.US3.pollingLayer[*].flow "\"ID_3_FROM_US3_TO_CU\""
+config **.US4.pollingLayer[*].flow "\"ID_3_FROM_US4_TO_CU\""
+config **.CM1.pollingLayer[*].flow "\"ID_5_FROM_CM1_TO_HU\""
+config **.TLM.pollingLayer[0].flow "\"ID_7_FROM_TLM_TO_HU\""
+config **.TLM.pollingLayer[1].flow "\"ID_7_FROM_TLM_TO_CU\""
+config **.RC.pollingLayer[*].flow "\"ID_8_FROM_RC_TO_HU\""
+config **.CU.app[1].flow "\"ID_1_FROM_LD1_TO_CU\""
+config **.CU.app[2].flow "\"ID_1_FROM_LD2_TO_CU\""
+config **.CU.app[3].flow "\"ID_3_FROM_US1_TO_CU\""
+config **.CU.app[4].flow "\"ID_3_FROM_US2_TO_CU\""
+config **.CU.app[5].flow "\"ID_3_FROM_US3_TO_CU\""
+config **.CU.app[6].flow "\"ID_3_FROM_US4_TO_CU\""
+config **.CU.app[7].flow "\"ID_7_FROM_TLM_TO_CU\""
+config **.S1.app[*].flow "\"ID_2_FROM_ME_TO_S1\""
+config **.S2.app[*].flow "\"ID_2_FROM_ME_TO_S2\""
+config **.S3.app[*].flow "\"ID_2_FROM_ME_TO_S3\""
+config **.S4.app[*].flow "\"ID_2_FROM_ME_TO_S4\""
+config **.HU.app[0].flow "\"ID_4_FROM_CU_TO_HU\""
+config **.HU.app[1].flow "\"ID_5_FROM_CM1_TO_HU\""
+config **.HU.app[2].flow "\"ID_7_FROM_TLM_TO_HU\""
+config **.HU.app[3].flow "\"ID_8_FROM_RC_TO_HU\""
+config **.RS1.app[*].flow "\"ID_6_FROM_ME_TO_RS1\""
+config **.RS2.app[*].flow "\"ID_6_FROM_ME_TO_RS2\""
+config **.CU.pollingLayer[1].flow "\"ID_1_FROM_LD1_TO_CU\""
+config **.CU.pollingLayer[2].flow "\"ID_1_FROM_LD2_TO_CU\""
+config **.CU.pollingLayer[3].flow "\"ID_3_FROM_US1_TO_CU\""
+config **.CU.pollingLayer[4].flow "\"ID_3_FROM_US2_TO_CU\""
+config **.CU.pollingLayer[5].flow "\"ID_3_FROM_US3_TO_CU\""
+config **.CU.pollingLayer[6].flow "\"ID_3_FROM_US4_TO_CU\""
+config **.CU.pollingLayer[7].flow "\"ID_7_FROM_TLM_TO_CU\""
+config **.S1.pollingLayer[*].flow "\"ID_2_FROM_ME_TO_S1\""
+config **.S2.pollingLayer[*].flow "\"ID_2_FROM_ME_TO_S2\""
+config **.S3.pollingLayer[*].flow "\"ID_2_FROM_ME_TO_S3\""
+config **.S4.pollingLayer[*].flow "\"ID_2_FROM_ME_TO_S4\""
+config **.HU.pollingLayer[0].flow "\"ID_4_FROM_CU_TO_HU\""
+config **.HU.pollingLayer[1].flow "\"ID_5_FROM_CM1_TO_HU\""
+config **.HU.pollingLayer[2].flow "\"ID_7_FROM_TLM_TO_HU\""
+config **.HU.pollingLayer[3].flow "\"ID_8_FROM_RC_TO_HU\""
+config **.RS1.pollingLayer[*].flow "\"ID_6_FROM_ME_TO_RS1\""
+config **.RS2.pollingLayer[*].flow "\"ID_6_FROM_ME_TO_RS2\""
+config **.CU.app[0].payloadLength 1500B
+config **.CU.app[0].burstSize 7
+config **.CU.app[0].period 10ms
+config **.CU.pollingLayer[0].burstSize 7
+config **.LD1.app[*].payloadLength 1300B
+config **.LD1.app[*].burstSize 1
+config **.LD1.app[*].period 1.4ms
+config **.LD1.pollingLayer[*].burstSize 1
+config **.LD2.app[*].payloadLength 1300B
+config **.LD2.app[*].burstSize 1
+config **.LD2.app[*].period 1.4ms
+config **.LD2.pollingLayer[*].burstSize 1
+config **.ME.app[0].payloadLength 80B
+config **.ME.app[0].burstSize 1
+config **.ME.app[0].period 250us
+config **.ME.pollingLayer[0].burstSize 1
+config **.ME.app[1].payloadLength 80B
+config **.ME.app[1].burstSize 1
+config **.ME.app[1].period 250us
+config **.ME.pollingLayer[1].burstSize 1
+config **.ME.app[2].payloadLength 80B
+config **.ME.app[2].burstSize 1
+config **.ME.app[2].period 250us
+config **.ME.pollingLayer[2].burstSize 1
+config **.ME.app[3].payloadLength 80B
+config **.ME.app[3].burstSize 1
+config **.ME.app[3].period 250us
+config **.ME.pollingLayer[3].burstSize 1
+config **.ME.app[4].payloadLength 1500B
+config **.ME.app[4].burstSize 119
+config **.ME.app[4].period 33.33ms
+config **.ME.pollingLayer[4].burstSize 119
+config **.ME.app[5].payloadLength 1500B
+config **.ME.app[5].burstSize 119
+config **.ME.app[5].period 33.33ms
+config **.ME.pollingLayer[5].burstSize 119
+config **.US1.app[*].payloadLength 188B
+config **.US1.app[*].burstSize 1
+config **.US1.app[*].period 100ms
+config **.US1.pollingLayer[*].burstSize 1
+config **.US2.app[*].payloadLength 188B
+config **.US2.app[*].burstSize 1
+config **.US2.app[*].period 100ms
+config **.US2.pollingLayer[*].burstSize 1
+config **.US3.app[*].payloadLength 188B
+config **.US3.app[*].burstSize 1
+config **.US3.app[*].period 100ms
+config **.US3.pollingLayer[*].burstSize 1
+config **.US4.app[*].payloadLength 188B
+config **.US4.app[*].burstSize 1
+config **.US4.app[*].period 100ms
+config **.US4.pollingLayer[*].burstSize 1
+config **.CM1.app[*].payloadLength 1500B
+config **.CM1.app[*].burstSize 119
+config **.CM1.app[*].period 16.66ms
+config **.CM1.pollingLayer[*].burstSize 119
+config **.TLM.app[*].payloadLength 600B
+config **.TLM.app[*].burstSize 1
+config **.TLM.app[*].period 625us
+config **.TLM.pollingLayer[*].burstSize 1
+config **.RC.app[5].payloadLength 1500B
+config **.RC.app[5].burstSize 119
+config **.RC.app[5].period 33.33ms
+config **.RC.pollingLayer[5].burstSize 119
+config **.burstSize 1
+config **.app[*].payloadLength 0B
+config **.app[*].period 0ms
+config **.app[*].burstSize 1
+config **.PollingMaster.pollingMaster.flowTable "FlowTableParameters { flows: [ \t{flow: \"ID_1_FROM_LD1_TO_CU\", addr: \"SimpleEthernetNet.LD1.eth\", burst: 1,\tperiod: 0.0014, deadline: 0.0014}, \t{flow: \"ID_1_FROM_LD2_TO_CU\", addr: \"SimpleEthernetNet.LD2.eth\", burst: 1,\tperiod: 0.0014, deadline: 0.0014}, \t{flow: \"ID_2_FROM_ME_TO_S1\", addr: \"SimpleEthernetNet.ME.eth\", burst: 1, period: 0.00025, deadline: 0.00025}, \t{flow: \"ID_2_FROM_ME_TO_S2\", addr: \"SimpleEthernetNet.ME.eth\", burst: 1, period: 0.00025, deadline: 0.00025}, \t{flow: \"ID_2_FROM_ME_TO_S3\", addr: \"SimpleEthernetNet.ME.eth\", burst: 1, period: 0.00025, deadline: 0.00025}, \t{flow: \"ID_2_FROM_ME_TO_S4\", addr: \"SimpleEthernetNet.ME.eth\", burst: 1, period: 0.00025, deadline: 0.00025}, \t{flow: \"ID_3_FROM_US1_TO_CU\", addr: \"SimpleEthernetNet.US1.eth\", burst: 1,\tperiod: 0.1, deadline: 0.1}, \t{flow: \"ID_3_FROM_US2_TO_CU\", addr: \"SimpleEthernetNet.US2.eth\", burst: 1,\tperiod: 0.1, deadline: 0.1}, \t{flow: \"ID_3_FROM_US3_TO_CU\", addr: \"SimpleEthernetNet.US3.eth\", burst: 1,\tperiod: 0.1, deadline: 0.1}, \t{flow: \"ID_3_FROM_US4_TO_CU\", addr: \"SimpleEthernetNet.US4.eth\", burst: 1,\tperiod: 0.1, deadline: 0.1}, \t{flow: \"ID_4_FROM_CU_TO_HU\", addr: \"SimpleEthernetNet.CU.eth\", burst: 7, period: 0.01, deadline: 0.002}, \t{flow: \"ID_5_FROM_CM1_TO_HU\", addr: \"SimpleEthernetNet.CM1.eth\", burst: 30, period: 0.004165, deadline: 0.01666}, \t{flow: \"ID_6_FROM_ME_TO_RS1\", addr: \"SimpleEthernetNet.ME.eth\", burst: 30, period: 0.0083325, deadline: 0.03333}, \t{flow: \"ID_6_FROM_ME_TO_RS2\", addr: \"SimpleEthernetNet.ME.eth\", burst: 30, period: 0.0083325, deadline: 0.03333}, \t{flow: \"ID_7_FROM_TLM_TO_HU\", addr: \"SimpleEthernetNet.TLM.eth\", burst: 1, period: 0.000625, deadline: 0.000625}, \t{flow: \"ID_7_FROM_TLM_TO_CU\", addr: \"SimpleEthernetNet.TLM.eth\", burst: 1, period: 0.000625, deadline: 0.000625}, \t{flow: \"ID_8_FROM_RC_TO_HU\", addr: \"SimpleEthernetNet.RC.eth\", burst: 30, period: 0.0083325, deadline: 0.03333} ] }"
+config **.SW1.relay.staticEntries "StaticRelayEntries { entries: [ \t\t{addr: \"SimpleEthernetNet.RS1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.RS2.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.US3.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.US4.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.RC.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.TLM.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.ME.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.S3.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.S4.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.LD1.eth\", port: 1}, \t\t{addr: \"SimpleEthernetNet.LD2.eth\", port: 2}, \t\t{addr: \"SimpleEthernetNet.US1.eth\", port: 3}, \t\t{addr: \"SimpleEthernetNet.US2.eth\", port: 4}, \t\t{addr: \"SimpleEthernetNet.CM1.eth\", port: 5}, \t\t{addr: \"SimpleEthernetNet.HU.eth\", port: 6}, \t\t{addr: \"SimpleEthernetNet.CU.eth\", port: 7}, \t\t{addr: \"SimpleEthernetNet.S1.eth\", port: 8}, \t\t{addr: \"SimpleEthernetNet.S2.eth\", port: 9}, \t\t{addr: \"SimpleEthernetNet.PollingMaster.eth\", port: 10} ] }"
+config **.SW2.relay.staticEntries "StaticRelayEntries { entries: [ \t\t{addr: \"SimpleEthernetNet.RS1.eth\", port: 1}, \t\t{addr: \"SimpleEthernetNet.RS2.eth\", port: 2}, \t\t{addr: \"SimpleEthernetNet.US3.eth\", port: 3}, \t\t{addr: \"SimpleEthernetNet.US4.eth\", port: 4}, \t\t{addr: \"SimpleEthernetNet.RC.eth\", port: 5}, \t\t{addr: \"SimpleEthernetNet.TLM.eth\", port: 6}, \t\t{addr: \"SimpleEthernetNet.ME.eth\", port: 7}, \t\t{addr: \"SimpleEthernetNet.S3.eth\", port: 8}, \t\t{addr: \"SimpleEthernetNet.S4.eth\", port: 9}, \t\t{addr: \"SimpleEthernetNet.LD1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.LD2.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.US1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.US2.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.CM1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.HU.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.CU.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.S1.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.S2.eth\", port: 0}, \t\t{addr: \"SimpleEthernetNet.PollingMaster.eth\", port: 0} ] }"
+
+vector 0 SimpleEthernetNet.LD2.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 1 SimpleEthernetNet.US2.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 2 SimpleEthernetNet.CM1.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 3 SimpleEthernetNet.LD1.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 4 SimpleEthernetNet.US1.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 5 SimpleEthernetNet.CU.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 6 SimpleEthernetNet.US3.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 7 SimpleEthernetNet.ME.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 8 SimpleEthernetNet.ME.pollingLayer[1] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 9 SimpleEthernetNet.ME.pollingLayer[2] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 10 SimpleEthernetNet.ME.pollingLayer[3] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 11 SimpleEthernetNet.ME.pollingLayer[4] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 12 SimpleEthernetNet.ME.pollingLayer[5] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 13 SimpleEthernetNet.TLM.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 14 SimpleEthernetNet.TLM.pollingLayer[1] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 15 SimpleEthernetNet.US4.pollingLayer[0] PollingQueueSize:vector ETV
+attr recordingmode vector
+vector 16 SimpleEthernetNet.PollingMaster.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 17 SimpleEthernetNet.SW1.port[0] QueueSize:vector ETV
+attr recordingmode vector
+vector 18 SimpleEthernetNet.SW2.port[7] QueueSize:vector ETV
+attr recordingmode vector
+vector 19 SimpleEthernetNet.ME.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+vector 20 SimpleEthernetNet.SW2.port[0] QueueSize:vector ETV
+attr recordingmode vector
+vector 21 SimpleEthernetNet.SW1.port[10] QueueSize:vector ETV
+attr recordingmode vector
+vector 22 SimpleEthernetNet.PollingMaster.pollingMaster TrxTime:vector ETV
+attr recordingmode vector
+vector 23 SimpleEthernetNet.SW1.port[8] QueueSize:vector ETV
+attr recordingmode vector
+vector 24 SimpleEthernetNet.S1.app[0] FLR:vector ETV
+attr recordingmode vector
+vector 25 SimpleEthernetNet.S1.app[0] E2eDelay:vector ETV
+attr recordingmode vector
+vector 26 SimpleEthernetNet.S1.app[0] Throughput:vector ETV
+attr recordingmode vector
+vector 27 SimpleEthernetNet.S1.app[0] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 28 SimpleEthernetNet.SW1.port[9] QueueSize:vector ETV
+attr recordingmode vector
+vector 29 SimpleEthernetNet.S2.app[0] FLR:vector ETV
+attr recordingmode vector
+vector 30 SimpleEthernetNet.S2.app[0] E2eDelay:vector ETV
+attr recordingmode vector
+vector 31 SimpleEthernetNet.S2.app[0] Throughput:vector ETV
+attr recordingmode vector
+vector 32 SimpleEthernetNet.S2.app[0] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 33 SimpleEthernetNet.SW2.port[8] QueueSize:vector ETV
+attr recordingmode vector
+vector 34 SimpleEthernetNet.S3.app[0] FLR:vector ETV
+attr recordingmode vector
+vector 35 SimpleEthernetNet.S3.app[0] E2eDelay:vector ETV
+attr recordingmode vector
+vector 36 SimpleEthernetNet.S3.app[0] Throughput:vector ETV
+attr recordingmode vector
+vector 37 SimpleEthernetNet.S3.app[0] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 38 SimpleEthernetNet.SW2.port[9] QueueSize:vector ETV
+attr recordingmode vector
+vector 39 SimpleEthernetNet.S4.app[0] FLR:vector ETV
+attr recordingmode vector
+vector 40 SimpleEthernetNet.S4.app[0] E2eDelay:vector ETV
+attr recordingmode vector
+vector 41 SimpleEthernetNet.S4.app[0] Throughput:vector ETV
+attr recordingmode vector
+vector 42 SimpleEthernetNet.S4.app[0] BurstE2eDelay:vector ETV
+attr recordingmode vector
+0	17320 10 17 17 0 0 1 1 1 1 1
+1	17330 10 18 18 0 0 1 1 1 1 1
+2	17340 1358 19 137 0 0 119 1 119 7140 568820
+3	18698 11 138 138 0 0 1 1 1 1 1
+4	18709 11 139 139 0 0 1 1 1 1 1
+5	18720 77 140 146 0 0 7 1 7 28 140
+6	18797 11 147 147 0 0 1 1 1 1 1
+7	18808 88 148 676 0 0.0005001728 5 1 2 7 11
+8	18896 88 149 735 0 0.0005007088 5 1 2 7 11
+9	18984 88 150 794 0 0.0005012448 5 1 2 7 11
+10	19072 91 151 858 0 0.000501808 5 1 2 7 11
+11	19163 1558 152 270 0 0 119 1 119 7140 568820
+12	20721 1558 271 389 0 0 119 1 119 7140 568820
+13	22279 12 390 390 0 0 1 1 1 1 1
+14	22291 12 391 391 0 0 1 1 1 1 1
+15	22303 12 392 392 0 0 1 1 1 1 1
+16	22315 708 407 882 0.00025 0.0005020768 32 0 1 16 16
+17	23023 552 411 887 0.0002500576 0.0005021616 24 0 1 12 12
+18	23575 368 416 842 0.0002501152 0.0005017504 16 0 1 8 8
+19	23943 364 430 863 0.0002501728 0.000501808 16 0 1 8 8
+20	24307 368 435 868 0.0002502624 0.0005018976 16 0 1 8 8
+21	24675 356 440 873 0.000250352 0.0005019872 16 0 1 8 8
+22	25031 244 446 879 0.0002504416 0.0005020768 8 4.416e-07 5.632e-07 4.1536e-06 2.1735936e-12
+23	25275 92 457 711 0.0002505264 0.0005005264 4 0 1 2 2
+24	25367 46 469 723 0.0002506112 0.0005006112 2 0 0 0 0
+25	25413 68 469 723 0.0002506112 0.0005006112 2 0.0002506112 0.0002506112 0.0005012224 1.2561194713088e-07
+26	25481 74 469 723 0.0002506112 0.0005006112 2 2553756.5759232 2556874.4766398 5110631.0525629 13059279738363
+27	25555 68 469 723 0.0002506112 0.0005006112 2 0.0002506112 0.0002506112 0.0005012224 1.2561194713088e-07
+28	25623 92 515 769 0.0002510624 0.0005010624 4 0 1 2 2
+29	25715 46 527 781 0.0002511472 0.0005011472 2 0 0 0 0
+30	25761 68 527 781 0.0002511472 0.0005011472 2 0.0002511472 0.0002511472 0.0005022944 1.2614983213568e-07
+31	25829 74 527 781 0.0002511472 0.0005011472 2 2548306.3319042 2554139.7816849 5102446.1135891 13017495185608
+32	25903 68 527 781 0.0002511472 0.0005011472 2 0.0002511472 0.0002511472 0.0005022944 1.2614983213568e-07
+33	25971 92 583 837 0.0002516832 0.0005016832 4 0 1 2 2
+34	26063 44 595 849 0.000251768 0.000501768 2 0 0 0 0
+35	26107 64 595 849 0.000251768 0.000501768 2 0.000251768 0.000251768 0.000503536 1.26774251648e-07
+36	26171 72 595 849 0.000251768 0.000501768 2 2542022.8146548 2550979.7356547 5093002.5503095 12969377601946
+37	26243 64 595 849 0.000251768 0.000501768 2 0.000251768 0.000251768 0.000503536 1.26774251648e-07
+38	26307 92 638 892 0.0002522464 0.0005022464 4 0 1 2 2
+39	26399 46 645 899 0.0002523312 0.0005023312 2 0 0 0 0
+40	26445 68 645 899 0.0002523312 0.0005023312 2 0.0002523312 0.0002523312 0.0005046624 1.2734206898688e-07
+41	26513 73 645 899 0.0002523312 0.0005023312 2 2536349.0523566 2548119.646958 5084468.6993146 12925980250604
+42	26586 68 645 899 0.0002523312 0.0005023312 2 0.0002523312 0.0002523312 0.0005046624 1.2734206898688e-07
+vector 43 SimpleEthernetNet.SW2.port[6] QueueSize:vector ETV
+attr recordingmode vector
+vector 44 SimpleEthernetNet.TLM.eth.phy QueueSize:vector ETV
+attr recordingmode vector
+13	26832 42 906 924 0.000625 0.0006251728 2 1 2 3 5
+14	26874 19 907 907 0.000625 0.000625 1 2 2 2 4
+16	26893 107 909 950 0.000625 0.0006266896 5 0 1 3 3
+17	27000 46 913 913 0.0006250576 0.0006250576 2 0 1 1 1
+20	27046 46 933 933 0.0006256784 0.0006256784 2 0 1 1 1
+21	27092 44 938 938 0.000626184 0.000626184 2 0 1 1 1
+22	27136 32 944 944 0.0006266896 0.0006266896 1 1.6896e-06 1.6896e-06 1.6896e-06 2.85474816e-12
+43	27168 46 918 918 0.0006251152 0.0006251152 2 0 1 1 1
+44	27214 46 928 928 0.0006251728 0.0006251728 2 0 1 1 1
+vector 45 SimpleEthernetNet.SW1.port[6] QueueSize:vector ETV
+attr recordingmode vector
+vector 46 SimpleEthernetNet.HU.app[2] FLR:vector ETV
+attr recordingmode vector
+vector 47 SimpleEthernetNet.HU.app[2] E2eDelay:vector ETV
+attr recordingmode vector
+vector 48 SimpleEthernetNet.HU.app[2] Throughput:vector ETV
+attr recordingmode vector
+vector 49 SimpleEthernetNet.HU.app[2] BurstE2eDelay:vector ETV
+attr recordingmode vector
+vector 50 SimpleEthernetNet.SW1.port[7] QueueSize:vector ETV
+attr recordingmode vector
+vector 51 SimpleEthernetNet.CU.app[7] FLR:vector ETV
+attr recordingmode vector
+vector 52 SimpleEthernetNet.CU.app[7] E2eDelay:vector ETV
+attr recordingmode vector
+vector 53 SimpleEthernetNet.CU.app[7] Throughput:vector ETV
+attr recordingmode vector
+vector 54 SimpleEthernetNet.CU.app[7] BurstE2eDelay:vector ETV
+attr recordingmode vector
+7	28130 18 1044 1044 0.00075 0.00075 1 2 2 2 4
+8	28148 18 1045 1045 0.00075 0.00075 1 2 2 2 4
+9	28166 18 1046 1046 0.00075 0.00075 1 2 2 2 4
+10	28184 19 1047 1047 0.00075 0.00075 1 2 2 2 4
+14	28203 23 972 972 0.0006273728 0.0006273728 1 1 1 1 1
+16	28226 68 956 1007 0.0006272 0.0006288896 3 0 1 1 1
+17	28294 46 960 960 0.0006272576 0.0006272576 2 0 1 1 1
+20	28340 46 993 993 0.0006278784 0.0006278784 2 0 1 1 1
+21	28386 44 998 998 0.000628384 0.000628384 2 0 1 1 1
+22	28430 30 1004 1004 0.0006288896 0.0006288896 1 2.2e-06 2.2e-06 2.2e-06 4.84e-12
+43	28460 46 965 965 0.0006273152 0.0006273152 2 0 1 1 1
+44	28506 46 975 975 0.0006273728 0.0006273728 2 0 1 1 1
+45	28552 46 955 955 0.0006271904 0.0006271904 2 0 1 1 1
+46	28598 23 987 987 0.0006276912 0.0006276912 1 0 0 0 0
+47	28621 34 987 987 0.0006276912 0.0006276912 1 0.0006276912 0.0006276912 0.0006276912 3.9399624255744e-07
+48	28655 37 987 987 0.0006276912 0.0006276912 1 7647072.3183629 7647072.3183629 7647072.3183629 58477715042272
+49	28692 34 987 987 0.0006276912 0.0006276912 1 0.0006276912 0.0006276912 0.0006276912 3.9399624255744e-07
+50	28726 48 1012 1012 0.0006293904 0.0006293904 2 0 1 1 1
+51	28774 24 1033 1033 0.0006298912 0.0006298912 1 0 0 0 0
+52	28798 35 1033 1033 0.0006298912 0.0006298912 1 0.0006298912 0.0006298912 0.0006298912 3.9676292383744e-07
+53	28833 38 1033 1033 0.0006298912 0.0006298912 1 7620363.6437531 7620363.6437531 7620363.6437531 58069942063034
+54	28871 35 1033 1033 0.0006298912 0.0006298912 1 0.0006298912 0.0006298912 0.0006298912 3.9676292383744e-07
+

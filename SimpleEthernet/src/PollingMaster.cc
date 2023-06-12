@@ -63,6 +63,8 @@ void PollingMaster::handleMessage(cMessage *msg) {
             //rischedulo il timer
             scheduleAt(simTime()+f.period, msg);
 
+            EV_INFO << "Scattato poll timer per il flusso " << pr->getFlow() << endl;
+
             sendNextPollRequest();
 
             return;
@@ -116,6 +118,8 @@ void PollingMaster::sendNextPollRequest() {
         txTime = simTime();
         send(pr, "lowerLayerOut");
         scheduleAt(simTime()+par("trxTimer"), trxTimer);
+
+        EV_INFO << "Invio poll request del flusso " << pr->getFlow() << endl;
     }
 }
 
