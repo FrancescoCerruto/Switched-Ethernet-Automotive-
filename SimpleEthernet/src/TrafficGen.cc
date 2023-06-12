@@ -91,6 +91,8 @@ void TrafficGen::generate() {
 
         pkt->setControlInfo(ci);
         send(pkt, "lowerLayerOut");
+
+        EV_INFO << "Sono nel modulo " << getParentModule()->getFullName() << " " << getFullName() << "e sto generando la frame n. " << TxSeqno << endl;
     }
 }
 
