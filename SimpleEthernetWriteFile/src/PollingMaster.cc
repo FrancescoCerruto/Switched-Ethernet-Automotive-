@@ -1,6 +1,9 @@
 #include "PollingMaster.h"
 #include "ApplicationPackets_m.h"
 
+#include <iostream>
+#include <fstream>
+
 Define_Module(PollingMaster);
 
 void PollingMaster::initialize() {
@@ -72,7 +75,7 @@ void PollingMaster::handleMessage(cMessage *msg) {
             if(strcmp(msg->getName(), "TrxTimer") == 0) {
                 //e il timer di ricezione
 
-                EV_INFO << "Transazione non completata in tempo" << endl;
+                //error("Transazione non completata in tempo");
                 ongoingTransaction = false;
                 sendNextPollRequest();
                 return;
@@ -119,7 +122,17 @@ void PollingMaster::sendNextPollRequest() {
         send(pr, "lowerLayerOut");
         scheduleAt(simTime()+par("trxTimer"), trxTimer);
 
-        EV_INFO << "Invio poll request del flusso " << pr->getFlow() << endl;
+        std::ofstream  out;
+        out.open("Output.txt", std::ios_base::app);
+        out << "Invio poll request del flusso " << pr->getFlow() << " all'istante " << simTime() << endl;
+        out << "In coda ho le poll request"<<endl;
+
+        for (int i = 0; i < pollQueue.getLength(); i++) {
+            out << check_and_cast<PollingRequest *>(pollQueue.get(i))->getFlow()<< " con priorita' " << check_and_cast<PollingRequest *>(pollQueue.get(i))->getPriority() << endl;
+        }
+
+        out << endl;
+        out.close();
     }
 }
 
@@ -127,5 +140,6 @@ int PollingMaster::poll_queue_comp(cObject *a, cObject *b) {
     PollingRequest *ta = check_and_cast<PollingRequest *>(a);
     PollingRequest *tb = check_and_cast<PollingRequest *>(b);
 
-    return (tb->getPriority()-ta->getPriority());
+    //return (tb->getPriority()-ta->getPriority());
+    return (ta->getPriority()-tb->getPriority());
 }

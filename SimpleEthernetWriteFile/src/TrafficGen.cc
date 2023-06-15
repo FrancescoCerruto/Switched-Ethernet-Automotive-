@@ -1,6 +1,9 @@
 #include "TrafficGen.h"
 #include "ApplicationPackets_m.h"
 
+#include <iostream>
+#include <fstream>
+
 Define_Module(TrafficGen);
 
 void TrafficGen::initialize() {
@@ -69,6 +72,11 @@ void TrafficGen::handleMessage(cMessage *msg) {
 }
 
 void TrafficGen::generate() {
+    std::ofstream  out;
+    out.open("Output.txt", std::ios_base::app);
+    out << "Sono nel modulo " << getParentModule()->getFullPath() << " - " << getFullName() << endl;
+    out << "Generazione frame all'istante " << simTime() << endl << endl;
+    out.close();
     DataPacket *pkt;
     DataControlInfo *ci;
     int i;
@@ -91,8 +99,6 @@ void TrafficGen::generate() {
 
         pkt->setControlInfo(ci);
         send(pkt, "lowerLayerOut");
-
-        EV_INFO << "Sono nel modulo " << getParentModule()->getFullName() << " " << getFullName() << "e sto generando la frame n. " << TxSeqno << endl;
     }
 }
 

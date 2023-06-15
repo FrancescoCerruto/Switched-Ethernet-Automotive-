@@ -2,6 +2,9 @@
 #include "PollingPackets_m.h"
 #include "ApplicationPackets_m.h"
 
+#include <iostream>
+#include <fstream>
+
 Define_Module(PollingLayer);
 
 void PollingLayer::initialize() {
@@ -14,8 +17,6 @@ void PollingLayer::handleMessage(cMessage *msg) {
     if(msg->getArrivalGate() == gate("upperLayerIn")) {
 
         DataPacket *pd = dynamic_cast<DataPacket *>(msg);
-
-        EV_INFO << "Sono nel modulo " << getParentModule()->getFullName() << " " << getFullName() << " e mi e arrivata la frame n. " << pd->getSeqno() << endl;
 
         //pkt contiene application data e control info (control info contiene indirizzo destinazione)
         cPacket *pkt = check_and_cast<cPacket *>(msg);
@@ -57,6 +58,11 @@ void PollingLayer::handleMessage(cMessage *msg) {
             numframe = burstSize;
         }
 
+        std::ofstream  out;
+        out.open("Output.txt", std::ios_base::app);
+        out << "Sono nel modulo " << getParentModule()->getFullPath() << " - " << getFullName() << endl;
+        out << "Mi e' arrivata una poll request all'istante " << simTime() << " con richiesta di " << numframe << " frame" << endl;
+
         //invio il numero di frame richiesto
         for(int i = 0; i < numframe && (!appTxQueue.isEmpty()); i++) {
             //estraggo il pacchetto dal buffer
@@ -71,6 +77,9 @@ void PollingLayer::handleMessage(cMessage *msg) {
             emit(sigQueueLen, appTxQueue.getLength());
             send(pkt, "lowerLayerOut");
         }
+
+        out << "Ho finito di inviare" << endl << endl;
+        out.close();
 
         delete req;
         return;
