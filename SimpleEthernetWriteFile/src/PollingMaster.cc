@@ -125,13 +125,6 @@ void PollingMaster::sendNextPollRequest() {
         std::ofstream  out;
         out.open("Output.txt", std::ios_base::app);
         out << "Invio poll request del flusso " << pr->getFlow() << " all'istante " << simTime() << endl;
-        out << "In coda ho le poll request"<<endl;
-
-        for (int i = 0; i < pollQueue.getLength(); i++) {
-            out << check_and_cast<PollingRequest *>(pollQueue.get(i))->getFlow()<< " con priorita' " << check_and_cast<PollingRequest *>(pollQueue.get(i))->getPriority() << endl;
-        }
-
-        out << endl;
         out.close();
     }
 }

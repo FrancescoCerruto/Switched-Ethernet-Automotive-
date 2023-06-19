@@ -2,9 +2,6 @@
 #include "PollingPackets_m.h"
 #include "ApplicationPackets_m.h"
 
-#include <iostream>
-#include <fstream>
-
 Define_Module(PollingLayer);
 
 void PollingLayer::initialize() {
@@ -58,11 +55,6 @@ void PollingLayer::handleMessage(cMessage *msg) {
             numframe = burstSize;
         }
 
-        std::ofstream  out;
-        out.open("Output.txt", std::ios_base::app);
-        out << "Sono nel modulo " << getParentModule()->getFullPath() << " - " << getFullName() << endl;
-        out << "Mi e' arrivata una poll request all'istante " << simTime() << " con richiesta di " << numframe << " frame" << endl;
-
         //invio il numero di frame richiesto
         for(int i = 0; i < numframe && (!appTxQueue.isEmpty()); i++) {
             //estraggo il pacchetto dal buffer
@@ -70,16 +62,13 @@ void PollingLayer::handleMessage(cMessage *msg) {
             //sequence number
             pkt->setTrxno(req->getTrxno());
             //check last frame di un burst
-            if (i == (numframe-1)) {
+            if (i == (numframe-1) || appTxQueue.isEmpty()) {
                 pkt->setLast(true);
             }
 
             emit(sigQueueLen, appTxQueue.getLength());
             send(pkt, "lowerLayerOut");
         }
-
-        out << "Ho finito di inviare" << endl << endl;
-        out.close();
 
         delete req;
         return;

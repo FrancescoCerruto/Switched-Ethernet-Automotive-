@@ -55,6 +55,7 @@ void TrafficGen::handleMessage(cMessage *msg) {
 
     //end to end delay di pacchetto
     simtime_t delay = simTime()-pkt->getGenTime();
+
     emit(sigE2eDelay, delay);
 
     //throughput
@@ -72,11 +73,6 @@ void TrafficGen::handleMessage(cMessage *msg) {
 }
 
 void TrafficGen::generate() {
-    std::ofstream  out;
-    out.open("Output.txt", std::ios_base::app);
-    out << "Sono nel modulo " << getParentModule()->getFullPath() << " - " << getFullName() << endl;
-    out << "Generazione frame all'istante " << simTime() << endl << endl;
-    out.close();
     DataPacket *pkt;
     DataControlInfo *ci;
     int i;
