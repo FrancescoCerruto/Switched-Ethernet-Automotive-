@@ -75,7 +75,7 @@ void PollingMaster::handleMessage(cMessage *msg) {
             if(strcmp(msg->getName(), "TrxTimer") == 0) {
                 //e il timer di ricezione
 
-                //error("Transazione non completata in tempo");
+                error("Transazione non completata in tempo");
                 ongoingTransaction = false;
                 sendNextPollRequest();
                 return;
