@@ -13,10 +13,6 @@ void PollingLayer::handleMessage(cMessage *msg) {
     //e un messaggio da TrafficGen
     if(msg->getArrivalGate() == gate("upperLayerIn")) {
 
-        DataPacket *pd = dynamic_cast<DataPacket *>(msg);
-
-        EV_INFO << "Sono nel modulo " << getParentModule()->getFullName() << " " << getFullName() << " e mi e arrivata la frame n. " << pd->getSeqno() << endl;
-
         //pkt contiene application data e control info (control info contiene indirizzo destinazione)
         cPacket *pkt = check_and_cast<cPacket *>(msg);
 
