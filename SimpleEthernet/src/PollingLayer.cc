@@ -64,7 +64,7 @@ void PollingLayer::handleMessage(cMessage *msg) {
             //sequence number
             pkt->setTrxno(req->getTrxno());
             //check last frame di un burst
-            if (i == (numframe-1)) {
+            if (i == (numframe-1) || appTxQueue.isEmpty()) {
                 pkt->setLast(true);
             }
 
