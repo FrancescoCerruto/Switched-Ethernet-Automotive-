@@ -75,7 +75,9 @@ void PollingMaster::handleMessage(cMessage *msg) {
             if(strcmp(msg->getName(), "TrxTimer") == 0) {
                 //e il timer di ricezione
 
-                error("Transazione non completata in tempo");
+                std::ofstream  out;
+                out.open("Output.txt", std::ios_base::app);
+                out << "Transazione non completata in tempo" << endl;
                 ongoingTransaction = false;
                 sendNextPollRequest();
                 return;
@@ -124,7 +126,8 @@ void PollingMaster::sendNextPollRequest() {
 
         std::ofstream  out;
         out.open("Output.txt", std::ios_base::app);
-        out << "Invio poll request del flusso " << pr->getFlow() << " all'istante " << simTime() << endl;
+        out << "Invio poll request del flusso " << pr->getFlow() << " all'istante " << simTime() << "che ha priorita " << pr->getPriority() << endl;
+
         out.close();
     }
 }
